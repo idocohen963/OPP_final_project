@@ -13,8 +13,6 @@ package src.observer;
  * - Observer: Brokers (who get notified)
  * - ConcreteObserver: Broker class implements this interface
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.Seller
  * @see src.factory.Broker
  */

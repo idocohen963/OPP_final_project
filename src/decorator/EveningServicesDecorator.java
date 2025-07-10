@@ -12,8 +12,6 @@ package src.decorator;
  * - Extended availability for deal completion
  * - Out-of-hours support and consultation
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.DealDecorator
  * @see src.decorator.Deal
  */

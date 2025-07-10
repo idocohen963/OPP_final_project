@@ -13,8 +13,6 @@ import src.util.Property;
  * - Updating existing property information
  * - Modifying property details while maintaining data integrity
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.Broker
  * @see src.util.Property
  */

@@ -16,8 +16,6 @@ import src.permission.ViewPermission;
  * - View all properties in the system
  * - Participate in property deals as the purchasing party
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.User
  * @see src.permission.ViewPermission
  */

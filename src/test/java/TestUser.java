@@ -22,8 +22,6 @@ import static org.junit.Assert.assertTrue;
  * - User type classification
  * - Factory pattern functionality
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.UserFactory
  * @see src.factory.User
  * @see src.permission.ViewPermission

@@ -30,8 +30,6 @@ import java.util.List;
  * - No duplicate addresses exist
  * - Address coordinates are properly formatted
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.util.Property
  * @see src.main.SystemManager
  */

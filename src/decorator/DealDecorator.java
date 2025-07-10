@@ -16,8 +16,6 @@ package src.decorator;
  * - Moving services
  * - Design services
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.Deal
  * @see src.decorator.BasicDeal
  * @see src.decorator.CleaningDecorator

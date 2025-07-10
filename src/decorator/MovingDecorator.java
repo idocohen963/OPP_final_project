@@ -12,8 +12,6 @@ package src.decorator;
  * - Transportation of belongings
  * - Moving insurance coverage
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.DealDecorator
  * @see src.decorator.Deal
  */

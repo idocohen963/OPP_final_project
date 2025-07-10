@@ -12,8 +12,6 @@ package src.factory;
  * 
  * Each user has a unique ID and a specific type that determines their permissions.
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.UserFactory
  * @see src.factory.Buyer
  * @see src.factory.Seller  

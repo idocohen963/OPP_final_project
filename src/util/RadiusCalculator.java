@@ -16,8 +16,6 @@ import java.util.List;
  * Manhattan distance is calculated as the sum of absolute differences of coordinates,
  * which represents the actual walking distance in a grid-based city layout.
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.util.Property
  * @see src.main.SystemManager
  */

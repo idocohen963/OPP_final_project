@@ -12,8 +12,6 @@ package src.strategy;
  * - Switch between different search algorithms dynamically
  * 
  * @param <T> The type of result returned by the search strategy
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.strategy.PropertySearchStrategy
  */
 public class PropertySearchContext<T> {

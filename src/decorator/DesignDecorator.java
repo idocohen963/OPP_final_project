@@ -12,8 +12,6 @@ package src.decorator;
  * - Color scheme and decoration recommendations
  * - Furniture arrangement suggestions
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.DealDecorator
  * @see src.decorator.Deal
  */

@@ -11,8 +11,6 @@ package src.permission;
  * - Removing properties from the system
  * - Triggering notifications to observers when properties are deleted
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.Seller
  * @see src.observer.PropertyDeletionObserver
  */

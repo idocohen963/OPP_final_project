@@ -27,8 +27,6 @@ import java.util.List;
  * - Moving services
  * - Design services
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.Deal
  * @see src.util.Property
  * @see src.factory.User

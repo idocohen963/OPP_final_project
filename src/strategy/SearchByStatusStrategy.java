@@ -19,8 +19,6 @@ import src.util.RadiusCalculator;
  * - Properties that are sold (status = true)
  * - Properties that are available for sale (status = false)
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.strategy.PropertySearchStrategy
  * @see src.util.Property
  * @see src.util.RadiusCalculator

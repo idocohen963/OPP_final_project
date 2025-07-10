@@ -17,8 +17,6 @@ import src.util.Property;
  * - Address immutability protection
  * - String representation formatting
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.util.Property
  */
 public class TestProperty {

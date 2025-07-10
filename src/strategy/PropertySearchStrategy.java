@@ -18,8 +18,6 @@ package src.strategy;
  * using Manhattan distance calculations.
  * 
  * @param <T> The type of result returned by the search strategy
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.strategy.SearchByStatusStrategy
  * @see src.strategy.SearchByPriceStrategy
  * @see src.strategy.SearchByAveragePriceStrategy

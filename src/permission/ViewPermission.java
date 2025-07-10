@@ -17,8 +17,6 @@ import java.util.List;
  * - Viewing individual property details by address
  * - Viewing all properties in the system
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.Buyer
  * @see src.factory.Seller
  * @see src.factory.Broker

@@ -19,8 +19,6 @@ import java.util.List;
  * - Proper observer patterns are established
  * - Users are properly initialized with their permissions
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.User
  * @see src.factory.Buyer
  * @see src.factory.Seller

@@ -22,8 +22,6 @@ import src.util.Property;
  * - Receive notifications when properties are deleted
  * - Manage property deals between buyers and sellers
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.User
  * @see src.permission.ViewPermission
  * @see src.permission.EditPermission

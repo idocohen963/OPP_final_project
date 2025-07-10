@@ -11,8 +11,6 @@ package src.decorator;
  * - Deep cleaning of all areas
  * - Preparation of property for new occupancy
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.DealDecorator
  * @see src.decorator.Deal
  */

@@ -19,8 +19,6 @@ import src.util.Property;
  * This class serves as the base component in the Decorator pattern,
  * providing the fundamental deal functionality that decorators can enhance.
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.decorator.Deal
  * @see src.decorator.DealDecorator
  */

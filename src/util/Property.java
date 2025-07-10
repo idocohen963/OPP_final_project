@@ -17,8 +17,6 @@ import java.util.Arrays;
  * - [4,5,1] represents the first apartment in a subdivided property at street 4, avenue 5
  * - [4,5,1,1] represents further subdivision within the first apartment
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.util.FileReaderProperty
  * @see src.main.SystemManager
  */

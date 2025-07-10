@@ -21,8 +21,6 @@ import src.util.RadiusCalculator;
  * - LOWER: Properties with price lower than target  
  * - EQUAL: Properties with price equal to target
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.strategy.PropertySearchStrategy
  * @see src.util.Property
  * @see src.util.RadiusCalculator

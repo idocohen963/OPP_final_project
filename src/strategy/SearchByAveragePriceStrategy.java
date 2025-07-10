@@ -20,8 +20,6 @@ import src.util.RadiusCalculator;
  * - Investment decision making
  * - Market research and reporting
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.strategy.PropertySearchStrategy
  * @see src.util.Property
  * @see src.util.RadiusCalculator

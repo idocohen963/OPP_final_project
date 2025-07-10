@@ -20,8 +20,6 @@ import src.permission.ViewPermission;
  * - Notify brokers when properties are deleted
  * - Participate in property deals as the selling party
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.factory.User
  * @see src.permission.ViewPermission
  * @see src.permission.DeletePermission

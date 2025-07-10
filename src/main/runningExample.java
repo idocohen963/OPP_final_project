@@ -28,8 +28,6 @@ import java.util.List;
  * - Strategy: Different search algorithms
  * - Decorator: Adding services to deals
  * 
- * @author Manhattan Real Estate System
- * @since 1.0
  * @see src.main.SystemManager
  * @see src.factory.UserFactory
  * @see src.strategy.PropertySearchStrategy
