@@ -1,123 +1,109 @@
 # Manhattan Real Estate Broker System
 
-## Project Overview
+## 🚀 Project Overview
 
-This project implements a comprehensive real estate broker system for Manhattan, New York, designed as part of an Object-Oriented Programming (OOP) course final assignment. The system demonstrates advanced OOP principles, SOLID design principles, and multiple design patterns working together in a cohesive application.
+This project implements a comprehensive real estate broker system for Manhattan, New York, designed as part of an Object-Oriented Programming (OOP) course final assignment. The system demonstrates advanced OOP principles, design patterns, and robust software engineering practices.
 
+---
 
-## System Description
+## 📑 Table of Contents
 
-The Manhattan Real Estate System manages properties on a grid-based address system where:
-- Properties are apartments characterized by their grid coordinates
-- Address format: `[street, avenue, subdivision1, subdivision2, ...]`
-- Examples: `[4,5]` (street 4, avenue 5) or `[4,5,1,1]` (subdivided apartment)
-- Properties have area (m²), price per m², and sale status
-- Users have different permission levels (Buyer, Seller, Broker)
+- [🚀 Project Overview](#-project-overview)
+- [🗺️ System Description](#-system-description)
+- [✨ Key Features](#-key-features)
+- [🏗️ Design Patterns Implemented](#-design-patterns-implemented)
+- [🧑‍💻 SOLID Principles in Action](#-solid-principles-in-action)
+- [💡 OOP Principles Demonstrated](#-oop-principles-demonstrated)
+- [🗂️ Project Structure](#-project-structure)
+- [⚙️ System Requirements](#-system-requirements)
+- [🛠️ Installation & Setup](#-installation--setup)
+- [🧪 Testing](#-testing)
+- [🌟 Implementation Highlights](#-implementation-highlights)
+- [🧩 Design Pattern Benefits](#-design-pattern-benefits)
+- [🎓 Learning Outcomes](#-learning-outcomes)
+- [👤 Author](#-author)
+- [📄 License](#-license)
 
-## Key Features
+---
+
+## 🗺️ System Description
+
+The Manhattan Real Estate System manages properties on a grid-based address system:
+
+- Properties: Apartments identified by grid coordinates  
+  - **Address format:** `[street, avenue, subdivision1, subdivision2, ...]`  
+  - **Examples:** `[4,5]` (street 4, avenue 5), `[4,5,1,1]` (subdivided apartment)
+- Attributes: Area (m²), price per m², sale status
+- Users: Buyer, Seller, Broker (each with unique permissions)
+- File-based property loading with validation
+
+---
+
+## ✨ Key Features
 
 ### 1. Property Management
-- **Grid-based addressing system** for Manhattan properties
-- **Property attributes**: address, area, price per m², sale status
-- **File-based property loading** with validation
-- **CRUD operations** with proper permission controls
+- Grid-based addressing system
+- Property attributes: address, area, price per m², sale status
+- File-based property load & validation
+- Full CRUD operations with permission controls
 
 ### 2. User Management
-- **Three user types**: Buyer, Seller, Broker
-- **Permission system**: View, Edit, Delete permissions
-- **Factory pattern** for user creation
-- **Observer pattern** for property deletion notifications
+- Three user types: Buyer, Seller, Broker
+- Permission system: View, Edit, Delete
+- Factory pattern for user creation
+- Observer pattern for property deletion notifications
 
 ### 3. Search Functionality
-- **Strategy pattern** for different search algorithms
-- **Radius-based searches** using Manhattan distance
-- **Search by status** (sold/available)
-- **Search by price** (higher/lower/equal)
-- **Average price calculation** for market analysis
+- Strategy pattern for flexible search algorithms
+- Radius-based searches (Manhattan distance)
+- Search by status (sold/available)
+- Search by price (higher/lower/equal)
+- Average price calculation
 
 ### 4. Deal Management
-- **Decorator pattern** for adding services to deals
-- **Basic deal execution** with property status updates
-- **Additional services**: Evening, Cleaning, Moving, Design
-- **Dynamic pricing** based on selected services
+- Decorator pattern for adding deal services
+- Basic deal execution with status updates
+- Additional services: Evening, Cleaning, Moving, Design
+- Dynamic pricing based on selected services
 
-## Design Patterns Implemented
+---
 
-### 1. Singleton Pattern
-- **SystemManager**: Ensures single instance managing the entire system
-- **Benefits**: Centralized property management, consistent state
+## 🏗️ Design Patterns Implemented
 
-### 2. Factory Method Pattern
-- **UserFactory**: Creates different user types (Buyer, Seller, Broker)
-- **Benefits**: Centralized user creation, validation, duplicate prevention
+| Pattern      | Where Used              | Benefit                              |
+| ------------ | ---------------------- | ------------------------------------- |
+| Singleton    | SystemManager           | Centralized property management       |
+| Factory      | UserFactory             | Centralized, validated user creation  |
+| Observer     | PropertyDeletionObserver| Loose coupling, automatic notifications |
+| Strategy     | PropertySearchStrategy  | Interchangeable/extensible search     |
+| Decorator    | Deal Services           | Flexible, dynamic service composition |
 
-### 3. Observer Pattern
-- **PropertyDeletionObserver**: Brokers receive notifications when sellers delete properties
-- **Benefits**: Loose coupling, automatic notifications
+---
 
-### 4. Strategy Pattern
-- **PropertySearchStrategy**: Different search algorithms (status, price, average)
-- **Benefits**: Interchangeable algorithms, extensible search functionality
+## 🧑‍💻 SOLID Principles in Action
 
-### 5. Decorator Pattern
-- **Deal decorators**: Add services to property deals dynamically
-- **Benefits**: Flexible service composition, extensible service options
+- **SRP:** Each class has a single responsibility
+- **OCP:** Easily extend search/services via patterns
+- **LSP:** Subtypes usable wherever parent types expected
+- **ISP:** Small, focused interfaces
+- **DIP:** High-level modules depend on abstractions
 
-## SOLID Principles Implementation
+---
 
-### Single Responsibility Principle (SRP)
-- **SystemManager**: Only manages system-wide operations
-- **Property**: Only represents property data
-- **UserFactory**: Only creates users
-- **RadiusCalculator**: Only calculates distances
+## 💡 OOP Principles Demonstrated
 
-### Open/Closed Principle (OCP)
-- **Strategy pattern**: New search strategies can be added without modifying existing code
-- **Decorator pattern**: New services can be added without changing deal logic
-- **Permission interfaces**: New permission types can be added easily
+- **Encapsulation:** Private fields, getters/setters
+- **Inheritance:** User hierarchy, DealDecorator, abstract classes
+- **Polymorphism:** Strategy & Decorator patterns, user permissions
+- **Abstraction:** Abstract User class, interfaces
 
-### Liskov Substitution Principle (LSP)
-- **User hierarchy**: All user types can be used interchangeably where User is expected
-- **Strategy implementations**: All search strategies can be substituted
-- **Deal decorators**: All decorators can be used interchangeably
+---
 
-### Interface Segregation Principle (ISP)
-- **Permission interfaces**: Separated ViewPermission, EditPermission, DeletePermission
-- **Strategy interfaces**: Specific interfaces for different search types
-- **Observer interfaces**: Focused on single responsibility
+## 🗂️ Project Structure
 
-### Dependency Inversion Principle (DIP)
-- **Strategy pattern**: High-level modules depend on abstractions, not concrete implementations
-- **Factory pattern**: Depends on abstract User class, not concrete implementations
-- **Observer pattern**: Depends on observer interface, not concrete observers
-
-## OOP Principles Demonstrated
-
-### Encapsulation
-- **Property**: Private fields with controlled access through getters/setters
-- **User**: Protected fields accessible only to subclasses
-- **SystemManager**: Private constructor for singleton pattern
-
-### Inheritance
-- **User hierarchy**: Buyer, Seller, Broker extend User
-- **DealDecorator**: All service decorators extend DealDecorator
-- **Abstract classes**: DealDecorator provides common functionality
-
-### Polymorphism
-- **Strategy pattern**: Different implementations of PropertySearchStrategy
-- **Decorator pattern**: Different deal decorators implementing Deal interface
-- **User types**: Different user implementations with varying permissions
-
-### Abstraction
-- **Abstract User class**: Common user functionality without implementation
-- **Interfaces**: Define contracts without implementation details
-- **Strategy interfaces**: Abstract search algorithms
-
-## Project Structure
-
-```
+```text
 src/
-├── decorator/           # Decorator pattern for deal services
+├── decorator/           # Deal service decorators
 │   ├── BasicDeal.java
 │   ├── CleaningDecorator.java
 │   ├── Deal.java
@@ -125,7 +111,7 @@ src/
 │   ├── DesignDecorator.java
 │   ├── EveningServicesDecorator.java
 │   └── MovingDecorator.java
-├── factory/            # Factory pattern for user creation
+├── factory/            # User factory and user types
 │   ├── Broker.java
 │   ├── Buyer.java
 │   ├── Seller.java
@@ -135,13 +121,13 @@ src/
 │   ├── SystemManager.java
 │   ├── runningExample.java
 │   └── prop1.txt
-├── observer/           # Observer pattern for notifications
+├── observer/           # Property deletion notifications
 │   └── PropertyDeletionObserver.java
-├── permission/         # Permission system interfaces
+├── permission/         # Permission interfaces
 │   ├── DeletePermission.java
 │   ├── EditPermission.java
 │   └── ViewPermission.java
-├── strategy/           # Strategy pattern for search algorithms
+├── strategy/           # Search algorithms
 │   ├── PropertySearchContext.java
 │   ├── PropertySearchStrategy.java
 │   ├── SearchByAveragePriceStrategy.java
@@ -155,99 +141,100 @@ src/
 │       ├── TestRadiusCalculator.java
 │       ├── TestSearchStrategies.java
 │       └── TestUser.java
-└── util/               # Utility classes
+└── util/               # Utilities
     ├── FileReaderProperty.java
     ├── Property.java
     └── RadiusCalculator.java
 ```
 
-## System Requirements
+---
 
-- **Java 8+** (uses modern Java features like switch expressions)
-- **JUnit 4** for testing
-- **File system access** for reading property data
+## ⚙️ System Requirements
 
-## Installation and Setup
+- Java 8+ (uses modern Java features)
+- JUnit 4 for testing
+- File system access for property data
 
-1. **Clone or download** the project files
-2. **Ensure Java 8+ is installed** on your system
-3. **Compile the project**:
+---
+
+## 🛠️ Installation & Setup
+
+1. Clone or download the project files
+2. Ensure Java 8+ is installed
+3. Compile the project:
    ```bash
    javac -cp . src/**/*.java
    ```
-4. **Run the example**:
+4. Run the example:
    ```bash
    java -cp . src.main.runningExample
    ```
 
+---
 
+## 🧪 Testing
 
-## Testing
+This project includes comprehensive unit tests for:
 
-The project includes comprehensive unit tests covering:
+- Property creation & validation
+- User creation & permissions
+- Search strategy functionality
+- Deal decorator behavior
+- File reading and parsing
+- Radius calculation accuracy
 
-- **Property creation and validation**
-- **User creation and permissions**
-- **Search strategy functionality**
-- **Deal decorator behavior**
-- **File reading and parsing**
-- **Radius calculation accuracy**
+*Run tests using your preferred Java testing framework or IDE.*
 
-Run tests using your preferred Java testing framework or IDE.
+---
 
-## Implementation Highlights
+## 🌟 Implementation Highlights
 
 ### Error Handling
-- **Comprehensive validation** for all inputs
-- **Custom exceptions** for business logic violations
-- **Graceful error handling** in file operations
-- **Boundary condition checking** for searches
+- Comprehensive input validation
+- Custom exceptions for business logic
+- Graceful file error handling
+- Search boundary condition checks
 
-### Performance Considerations
-- **Efficient Manhattan distance calculations**
-- **Iterator pattern** for safe collection modification
-- **Lazy loading** where appropriate
-- **Memory-efficient copying** of collections
+### Performance
+- Efficient Manhattan distance calculations
+- Safe collection modifications (iterator pattern)
+- Lazy loading where appropriate
+- Memory-efficient data structures
 
 ### Code Quality
-- **Comprehensive JavaDoc documentation**
-- **Consistent coding style**
-- **Proper exception handling**
-- **Thread-safe singleton implementation**
+- Full JavaDoc documentation
+- Consistent coding style
+- Proper exception handling
+- Thread-safe singleton implementation
 
-## Design Pattern Benefits
+---
 
-### Maintainability
-- **Separation of concerns** through different patterns
-- **Loose coupling** between components
-- **Easy to extend** with new functionality
+## 🧩 Design Pattern Benefits
 
-### Flexibility
-- **Runtime strategy switching** for searches
-- **Dynamic service composition** for deals
-- **Configurable user permissions**
+- **Maintainability:** Separation of concerns, loose coupling, easy extensibility
+- **Flexibility:** Runtime strategy switching, dynamic deal services, configurable permissions
+- **Testability:** Isolated components, mock-friendly interfaces, predictable behavior
 
-### Testability
-- **Isolated components** for unit testing
-- **Mock-friendly interfaces**
-- **Predictable behavior** patterns
+---
 
-## Learning Outcomes
+## 🎓 Learning Outcomes
 
-This project demonstrates:
-- **Advanced OOP concepts** in a real-world scenario
-- **Design pattern integration** in a cohesive system
-- **SOLID principles** applied to complex requirements
-- **Enterprise-level code organization**
-- **Comprehensive testing strategies**
+- Advanced OOP concepts in a real-world scenario
+- Integration of design patterns in a cohesive system
+- SOLID principles applied to complex requirements
+- Enterprise-level code organization
+- Comprehensive testing strategies
 
-## Author
+---
 
-**Ido cohen**  
-*idocohen963@gmail.com*  
-[GitHub](https://github.com/idocohen963)  
-[LinkedIn](https://www.linkedin.com/in/ido-cohen-14b8772b9/)
+## 👤 Author
 
-## License
+**Ido Cohen**  
+idocohen963@gmail.com  
+[GitHub](https://github.com/idocohen963) | [LinkedIn](https://www.linkedin.com/in/ido-cohen-14b8772b9/)
+
+---
+
+## 📄 License
 
 This project is developed for educational purposes as part of an Object-Oriented Programming course.
