@@ -243,9 +243,10 @@ This project demonstrates:
 
 ## Author
 
-**Manhattan Real Estate System**  
-*Object-Oriented Programming Final Project*  
-*Academic Year 2025*
+**Ido cohen**  
+*idocohen963@gmail.com*  
+[GitHub](https://github.com/idocohen963)  
+[LinkedIn](https://www.linkedin.com/in/ido-cohen-14b8772b9/)
 
 ## License
 
