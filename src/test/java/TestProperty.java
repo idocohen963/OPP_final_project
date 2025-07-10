@@ -5,10 +5,27 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import src.util.Property;
 
-//good
+/**
+ * Comprehensive unit tests for the Property class.
+ * Tests all aspects of property creation, validation, and functionality.
+ * 
+ * Test coverage includes:
+ * - Valid property creation with various address formats
+ * - Invalid input validation and exception handling
+ * - Price calculation accuracy
+ * - Status change functionality
+ * - Address immutability protection
+ * - String representation formatting
+ * 
+ * @author Manhattan Real Estate System
+ * @since 1.0
+ * @see src.util.Property
+ */
 public class TestProperty {
-    
-    // Tests for valid property creation
+    /**
+     * Tests creation of a valid property with standard parameters.
+     * Verifies that all property attributes are correctly set.
+     */
     @Test
     public void testValidPropertyCreation() {
         int[] address = {5, 12};
@@ -20,7 +37,9 @@ public class TestProperty {
         assertFalse(prop.getStatus());
     }
 
-    // Tests for invalid fields
+    /**
+     * Tests that invalid address (less than 2 coordinates) throws exception.
+     */
     @Test
     public void testInvalidAddress() {
         assertThrows(IllegalArgumentException.class, () -> {
@@ -28,6 +47,9 @@ public class TestProperty {
         });
     }
 
+    /**
+     * Tests that negative area throws IllegalArgumentException.
+     */
     @Test
     public void testNegativeArea() {
         int[] address = {3, 4};
@@ -36,15 +58,18 @@ public class TestProperty {
         });
     }
 
-    // Test for price calculation
+    /**
+     * Tests total price calculation (area * price per square meter).
+     */
     @Test
     public void testTotalPriceCalculation() {
         Property prop = new Property(new int[]{2,7}, 120, 8500, false);
         Assert.assertEquals(120 * 8500, prop.getTotalPrice(), 0.001);
-
     }
 
-    // Test for status change
+    /**
+     * Tests that property status can be changed correctly.
+     */
     @Test
     public void testStatusChange() {
         Property prop = new Property(new int[]{1,1}, 90, 6000, false);
@@ -52,7 +77,10 @@ public class TestProperty {
         assertTrue(prop.getStatus());
     }
 
-    // Test for address copy protection
+    /**
+     * Tests that modifying the original address array doesn't affect the property.
+     * Verifies immutability protection.
+     */
     @Test
     public void testAddressCopyProtection() {
         int[] original = {8, 3};
@@ -62,7 +90,9 @@ public class TestProperty {
         Assert.assertArrayEquals(new int[]{8,3}, prop.getAddress());
     }
 
-    // Test for toString
+    /**
+     * Tests the string representation format of the property.
+     */
     @Test
     public void testToStringFormat() {
         Property prop = new Property(new int[]{6,9}, 75.5, 12000, true);

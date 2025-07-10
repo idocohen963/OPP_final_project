@@ -10,9 +10,31 @@ import src.permission.ViewPermission;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-//good
+/**
+ * Comprehensive unit tests for the User creation and permission system.
+ * Tests the Factory pattern implementation and permission assignments.
+ * 
+ * Test coverage includes:
+ * - Valid user creation for all types
+ * - Invalid input validation
+ * - Duplicate user prevention
+ * - Permission assignment verification
+ * - User type classification
+ * - Factory pattern functionality
+ * 
+ * @author Manhattan Real Estate System
+ * @since 1.0
+ * @see src.factory.UserFactory
+ * @see src.factory.User
+ * @see src.permission.ViewPermission
+ * @see src.permission.EditPermission
+ * @see src.permission.DeletePermission
+ */
 public class TestUser {
-    
+    /**
+     * Tests creation of valid users for all user types.
+     * Verifies that user ID and type are correctly set.
+     */
     @Test
     public void testUserCreationWithValidId() {
         User buyer = UserFactory.createUser(User.UserType.BUYER, 123);
@@ -28,50 +50,70 @@ public class TestUser {
         Assert.assertEquals(User.UserType.BROKER, broker.getUserType());
     }
 
+    /**
+     * Tests that negative user ID throws IllegalArgumentException.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testUserCreationWithNegativeId() {
         UserFactory.createUser(User.UserType.BUYER, -1);
     }
 
+    /**
+     * Tests that creating duplicate buyers throws IllegalArgumentException.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testDuplicateBuyerCreation() {
         UserFactory.createUser(User.UserType.BUYER, 111);
         UserFactory.createUser(User.UserType.BUYER, 111);
     }
 
+    /**
+     * Tests that creating duplicate sellers throws IllegalArgumentException.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testDuplicateSellerCreation() {
         UserFactory.createUser(User.UserType.SELLER, 222);
         UserFactory.createUser(User.UserType.SELLER, 222);
     }
 
+    /**
+     * Tests that creating duplicate brokers throws IllegalArgumentException.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void testDuplicateBrokerCreation() {
         UserFactory.createUser(User.UserType.BROKER, 333);
         UserFactory.createUser(User.UserType.BROKER, 333);
     }
 
+    /**
+     * Tests that each user type has the correct permissions.
+     * Verifies the permission system implementation.
+     */
     @Test
     public void testUserTypePermissions() {
-        // Test src.factory.Buyer permissions
+        // Test Buyer permissions - View only
         User buyer = UserFactory.createUser(User.UserType.BUYER, 111111);
         assertTrue(buyer instanceof ViewPermission);
         assertFalse(buyer instanceof DeletePermission);
         assertFalse(buyer instanceof EditPermission);
 
-        // Test src.factory.Seller permissions
+        // Test Seller permissions - View and Delete
         User seller = UserFactory.createUser(User.UserType.SELLER, 111112);
         assertTrue(seller instanceof ViewPermission);
         assertTrue(seller instanceof DeletePermission);
         assertFalse(seller instanceof EditPermission);
 
-        // Test src.factory.Broker permissions
+        // Test Broker permissions - View and Edit
         User broker = UserFactory.createUser(User.UserType.BROKER, 111113);
         assertTrue(broker instanceof ViewPermission);
         assertFalse(broker instanceof DeletePermission);
         assertTrue(broker instanceof EditPermission);
     }
 
+    /**
+     * Tests that users are created as the correct concrete type.
+     * Verifies proper inheritance and type classification.
+     */
     @Test
     public void testUserTypeClassification() {
         User buyer = UserFactory.createUser(User.UserType.BUYER, 111114);
